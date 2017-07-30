@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hj.mapper.GrpMstMapper">
+	<insert id="create">
+		insert into GrpMst 
+		values (#{GrpNum}, #{GrpNam})
+	</insert>
+	
+	<select id="read" resultType = "com.hj.domain.GrpMstVO">
+		select *
+		from GrpMst
+		where GrpNum = #{GrpNum}
+	</select>
+	
+	<update id="update">
+		update grpmst set grpnam=#{GrpNam}
+		where grpnum=#{GrpNum}
+	</update>
+	
+	<delete id="delete">
+		delete grpmst 
+		where grpnum=#{GrpNum}
+	</delete>
+	
+	<select id="listAll" resultType="com.hj.domain.GrpMstVO">
+		select * 
+		from grpmst
+	</select>
+</mapper>
